@@ -8,7 +8,6 @@ class QuoteSpider(scrapy.Spider):
     def parse(self, response):
         # title = response.css('title::text').extract()
         # yield {'titletext': title}
-        items = QuotetutorialItem()
         
         all_div_quotes = response.css('div.quote')
         
@@ -17,6 +16,7 @@ class QuoteSpider(scrapy.Spider):
         # tag = all_div_quotes.css('.tag::text').extract()
         
         for quote in all_div_quotes:
+            items = QuotetutorialItem()
             title = quote.css('span.text::text').extract()
             author = quote.css('.author::text').extract()
             tag = quote.css('.tag::text').extract()
