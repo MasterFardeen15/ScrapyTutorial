@@ -12,15 +12,13 @@ import pymongo
 class QuotetutorialPipeline:
     
     def __init__(self):
-        self.conn = pymongo.MongoClient(
-            'localhost',
-            27017
-        )
+        self.conn = pymongo.MongoClient("mongodb://localhost:27017")
+
         db = self.conn['myquotes']
         self.collection = db['quotes_tb']
-    
+
     def process_item(self, item, spider):
-        self.collection.insert(dict(item))
+        self.collection.insert_one(dict(item))
         return item
 
 
