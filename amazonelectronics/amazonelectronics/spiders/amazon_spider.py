@@ -1,5 +1,7 @@
 import scrapy
 from ..items import AmazonelectronicsItem
+from scrapy.utils.response import open_in_browser
+
 
 class AmazonSpiderSpider(scrapy.Spider):
     name = "amazon_spider"
@@ -8,20 +10,20 @@ class AmazonSpiderSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        
+        # open_in_browser(response)
         all_div_items = response.css('#gridItemRoot')
         
         for object in all_div_items:
             items = AmazonelectronicsItem()
             
-            title = object.css('._cDEzb_p13n-sc-css-line-clamp-3_g3dy1::text').extract()
+            title = object.css('._cDEzb_p13n-sc-css-line-clamp-4_2q2cc, ._cDEzb_p13n-sc-css-line-clamp-3_g3dy1').css('::text').extract()
             rank = object.css('.zg-bdg-text::text').extract()
-            price = object.css('._cDEzb_p13n-sc-price_3mJ9Z').css('::text').extract()
+            price = object.css('.p13n-sc-price').css('::text').extract()
             imagelink = object.css('.p13n-product-image').css('::attr(src)').extract()
             
             items['title'] = title
             items['rank'] = rank
-            items['price'] = price
+            items['price'] = price or "N/A"
             items['imagelink'] = imagelink
 
             yield items
