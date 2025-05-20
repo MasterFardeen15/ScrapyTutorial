@@ -4,7 +4,7 @@ from scrapy.utils.response import open_in_browser
 
 
 class AmazonSpiderSpider(scrapy.Spider):
-    name = "amazon_spider"
+    name = "amazon"
     page_number = 2
     start_urls = [
         "https://www.amazon.com/Best-Sellers-Electronics/zgbs/electronics/ref=zg_bs_nav_electronics_0"
