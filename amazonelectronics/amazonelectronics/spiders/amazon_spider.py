@@ -36,5 +36,5 @@ class AmazonSpiderSpider(scrapy.Spider):
             
         next_page = 'https://www.amazon.com/Best-Sellers-Electronics/zgbs/electronics/ref=zg_bs_pg_' + str(AmazonSpiderSpider.page_number) + '_electronics?_encoding=UTF8&pg=' + str(AmazonSpiderSpider.page_number)
         if AmazonSpiderSpider.page_number < 3:
-            AmazonSpiderSpider.page_number += 2
+            AmazonSpiderSpider.page_number += 1
             yield response.follow(next_page, callback = self.parse)
