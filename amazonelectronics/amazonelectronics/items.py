@@ -12,4 +12,6 @@ class AmazonelectronicsItem(scrapy.Item):
     rank = scrapy.Field()
     price = scrapy.Field()
     imagelink = scrapy.Field()
+    ratingnum = scrapy.Field()
+    ratingscore = scrapy.Field()
     pass
