@@ -2,7 +2,6 @@ import scrapy
 from ..items import AmazonelectronicsItem
 from scrapy.utils.response import open_in_browser
 
-
 class AmazonSpiderSpider(scrapy.Spider):
     name = "amazon"
     page_number = 2
