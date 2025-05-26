@@ -28,7 +28,7 @@ A scraper designed to extract the best selling Amazon Electronics, focusing on p
 ### Key Features:
 + Scrapes product title, rank, price, number of ratings, rating score out of 5, and image link.
 + Handles pagination to ensure comprehensive data extraction.
-+ Processes and structures porduct and rating data into CSV export for analysis.
++ Processes and structures product and rating data into CSV export for analysis.
 
 ## PDF to CSV
 ### Description:
