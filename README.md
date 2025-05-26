@@ -47,10 +47,10 @@ A scraper that converts structured text from a technical PDF into a CSV file, fa
 
 ## Job Aggregator
 ### Description:
-A scraper that collects job listings from LinkedIn, storing them in both CSV files and Elasticsearch for advanced search capabilities.
+A scraper that collects job listings from LinkedIn and TimesJobs, storing them in both CSV files and Elasticsearch for advanced search capabilities.
 ### Skills & Tools:
 + Python
-+ BeautifulSoup
++ Beautiful Soup
 + Requests
 + Elasticsearch
 ### Key Features:
