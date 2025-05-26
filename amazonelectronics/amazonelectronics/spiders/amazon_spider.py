@@ -10,7 +10,7 @@ class AmazonSpiderSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        # open_in_browser(response)
+        open_in_browser(response)
         all_div_items = response.css('#gridItemRoot')
         
         for object in all_div_items:
